@@ -10,11 +10,11 @@ set cpo&vim
 
 function! cursorword#highlight() abort
   if !get(g:, 'cursorword_highlight', 1) | return | endif
-  highlight CursorWord0 term=underline cterm=underline gui=underline
+  highlight CursorWord0 term=reverse cterm=reverse gui=reverse
   redir => out
     silent! highlight CursorLine
   redir END
-  let highlight = 'highlight CursorWord1 term=underline cterm=underline gui=underline'
+  let highlight = 'highlight CursorWord1 term=bold cterm=bold gui=bold'
   execute highlight matchstr(out, 'ctermbg=#\?\w\+') matchstr(out, 'guibg=#\?\w\+')
 endfunction
 
