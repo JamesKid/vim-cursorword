@@ -14,7 +14,7 @@ function! cursorword#highlight() abort
   redir => out
     silent! highlight CursorLine
   redir END
-  let highlight = 'highlight CursorWord1 term=bold cterm=bold gui=bold'
+  let highlight = 'highlight CursorWord1 term=underline cterm=none gui=underline'
   execute highlight matchstr(out, 'ctermbg=#\?\w\+') matchstr(out, 'guibg=#\?\w\+')
 endfunction
 
